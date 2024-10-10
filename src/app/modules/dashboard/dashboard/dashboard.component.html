@@ -1,0 +1,17 @@
+<p-menubar
+  [model]="items"
+  styleClass="p-mb-4"
+  [style]="{ width: '100%' }"
+></p-menubar>
+
+<div class="p-mt-4">
+  <ng-container *ngIf="selectedMenuItem === 'calendario'">
+    <app-calendar></app-calendar>
+  </ng-container>
+  <ng-container *ngIf="selectedMenuItem === 'listarEspacios'">
+    <app-listar-espacios></app-listar-espacios>
+  </ng-container>
+  <ng-container *ngIf="selectedMenuItem === 'listarReservas'">
+    <app-listar-reservas></app-listar-reservas>
+  </ng-container>
+</div>

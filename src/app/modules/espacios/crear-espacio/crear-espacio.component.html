@@ -1,0 +1,33 @@
+<p-toast></p-toast>
+<form [formGroup]="espacioForm" (ngSubmit)="crearEspacio()">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" pInputText formControlName="nombre" />
+    </div>
+    <div class="p-field">
+      <label for="descripcion">Descripción</label>
+      <input
+        id="descripcion"
+        type="text"
+        pInputText
+        formControlName="descripcion"
+      />
+    </div>
+    <div class="p-field">
+      <label for="capacidad">Capacidad</label>
+      <input
+        id="capacidad"
+        type="number"
+        pInputText
+        formControlName="capacidad"
+      />
+    </div>
+    <button
+      pButton
+      type="submit"
+      label="Crear Espacio"
+      [disabled]="espacioForm.invalid"
+    ></button>
+  </div>
+</form>

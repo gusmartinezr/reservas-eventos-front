@@ -1,0 +1,43 @@
+<p-card header="Listar Reservas" styleClass="p-mb-4">
+  <p-button
+    icon="pi pi-plus"
+    label="Crear Reserva"
+    class="p-button-success p-mb-3"
+    (click)="showModalDialog()"
+  ></p-button>
+  <p-table [value]="reservas">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre del Evento</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reserva>
+      <tr>
+        <td>{{ reserva.nombre_evento }}</td>
+        <td>{{ reserva.fecha_inicio }}</td>
+        <td>{{ reserva.fecha_fin }}</td>
+        <td>
+          <button
+            pButton
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-danger"
+            (click)="eliminarReserva(reserva.id)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+
+<!-- Dialog para crear reserva -->
+<p-dialog
+  header="Crear Reserva"
+  [(visible)]="displayModal"
+  [modal]="true"
+  [closable]="true"
+>
+  <app-crear-reserva (reservaCreada)="onReservaCreada()"></app-crear-reserva>
+</p-dialog>

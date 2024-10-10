@@ -1,0 +1,11 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .small-calendar {
+    width: 100vh; 
+    height: 80vh; 
+  }
